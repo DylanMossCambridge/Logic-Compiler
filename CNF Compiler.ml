@@ -250,4 +250,8 @@ let input_to_cnf input = ast_to_cnf ( input_to_ast input );;
 
 pprint (input_to_cnf "~(P | Q | R) | ((P & Q) | R)");;
 
+(* (¬P ∨ P ∨ R) ∧ (¬Q ∨ P ∨ R) ∧ (¬R ∨ P ∨ R) ∧ (¬P ∨ Q ∨ R) ∧ (¬Q ∨ Q ∨ R) ∧ (¬R ∨ Q ∨ R) *) 
+
 pprint (input_to_cnf "(P <-> Q) -> R")
+
+(* (P ∨ Q ∨ R) ∧ (¬Q ∨ Q ∨ R) ∧ (P ∨ ¬P ∨ R) ∧ (¬Q ∨ ¬P ∨ R) *)
